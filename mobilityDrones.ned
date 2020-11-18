@@ -26,7 +26,7 @@ network mobilityDrones
         visualizer: IntegratedMultiVisualizer { // original IntegratedVisualizer
             @display("p=-100,-50");
         }
-        host[numHosts]: SensorNode {  // original StandardHost
+        host[numHosts]: StandardHost {  // original StandardHost
             @display("i=misc/node_vs");
         }
         
@@ -38,10 +38,10 @@ network mobilityDrones
             @display("p=0,0;i=misc/sensorgateway");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=-100,0");
+            @display("p=0,200");
         }
         radioMedium: Ieee802154NarrowbandScalarRadioMedium {
-            @display("p=-50,0");
+            @display("p=200,0");
         }
         
         
