@@ -1,14 +1,14 @@
 version 2
-run Drone-0-20201118-08:27:51-23028
+run Drone-0-20201118-10:23:04-9220
 attr configname Drone
-attr datetime 20201118-08:27:51
+attr datetime 20201118-10:23:04
 attr experiment Drone
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network mobilityDrones
-attr processid 23028
+attr processid 9220
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -25,12 +25,12 @@ param *.visualizer.osgVisualizer.typename "\"IntegratedOsgVisualizer\""
 param *.visualizer.osgVisualizer.sceneVisualizer.clearColor "\"skyblue\""
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneImage "\"showcases/desert\""
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneImageSize 500m
-param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 500m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -300m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -300m
+param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 1000m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -500m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -500m
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinZ 0m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 300m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 300m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 1000m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 1000m
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxZ 200m
 param *.visualizer.osgVisualizer.networkNodeVisualizer.displayModuleName false
 param *.visualizer.*.mobilityVisualizer.displayMobility true

@@ -1,0 +1,297 @@
+file 20927923 1605723300                                        
+version 2
+run Rede-0-20201118-15:14:26-7924
+attr configname Rede
+attr datetime 20201118-15:14:26
+attr experiment Rede
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network mobilityDrones
+attr processid 7924
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.arp.typename "\"GlobalArp\""
+param **.netmaskRoutes "\"\""
+param *.radioMedium.backgroundNoise.power -110dBm
+param *.configurator.config "xmldoc(\"topology.xml\")"
+param *.configurator.addStaticRoutes false
+param *.host*.numApps 2
+param *.host*.app[0].typename "\"UdpBasicApp\""
+param *.host*.app[0].destAddresses "\"sensor1\""
+param *.host*.app[0].destPort 1000
+param *.host*.app[0].sendInterval 1s
+param *.host*.app[0].startTime uniform(0s,1s)
+param *.host*.app[0].messageLength 10Byte
+param *.host*.app[0].packetName "\"DroneData\""
+param *.host*.app[1].typename "\"UdpSink\""
+param *.host*.app[1].localPort 1000
+param *.sensor*.numApps 2
+param *.sensor*.app[0].typename "\"UdpBasicApp\""
+param *.sensor*.app[0].destAddresses "\"host[0]\""
+param *.sensor*.app[0].destPort 1000
+param *.sensor*.app[0].sendInterval 10s
+param *.sensor*.app[0].startTime uniform(0s,1s)
+param *.sensor*.app[0].messageLength 10Byte
+param *.sensor*.app[0].packetName "\"SensorData\""
+param *.sensor*.app[1].typename "\"UdpSink\""
+param *.sensor*.app[1].localPort 1000
+param *.visualizer.*.routingTableVisualizer[0].displayRoutingTables false
+param *.visualizer.*.routingTableVisualizer[0].displayRoutesIndividually false
+param *.visualizer.*.routingTableVisualizer[0].lineShift 0
+param *.visualizer.*.routingTableVisualizer[0].displayLabels true
+param *.visualizer.*.interfaceTableVisualizer[0].displayInterfaceTables false
+param *.visualizer.*.numDataLinkVisualizers 2
+param *.visualizer.*.dataLinkVisualizer[*].displayLinks true
+param *.visualizer.*.dataLinkVisualizer[0].nodeFilter "\"sensor1 or host[0]\""
+param *.visualizer.*.dataLinkVisualizer[1].*Color "\"blue\""
+param *.visualizer.*.dataLinkVisualizer[1].nodeFilter "\"sensor1 or host[0]\""
+param *.visualizer.*.numStatisticVisualizers 2
+param *.visualizer.*.statisticVisualizer[*].zIndex 1
+param *.visualizer.*.statisticVisualizer[0].displayStatistics true
+param *.visualizer.*.statisticVisualizer[0].signalName "\"packetSent\""
+param *.visualizer.*.statisticVisualizer[0].statisticExpression "\"count\""
+param *.visualizer.*.statisticVisualizer[0].sourceFilter "\"**.host[0].udp **.sensor1.udp\""
+param *.visualizer.*.statisticVisualizer[0].format "\"sent: %v pks\""
+param *.visualizer.*.statisticVisualizer[1].displayStatistics true
+param *.visualizer.*.statisticVisualizer[1].signalName "\"packetReceived\""
+param *.visualizer.*.statisticVisualizer[1].statisticExpression "\"count\""
+param *.visualizer.*.statisticVisualizer[1].sourceFilter "\"**.host[0].udp **.sensor1.udp\""
+param *.visualizer.*.statisticVisualizer[1].format "\"rcvd: %v pks\""
+param *.numHosts 1
+param *.host[*].osgModel "\"3d/drone.ive.100.scale.0,0,90.rot\""
+param *.host[*].mobility.typename "\"RandomWaypointMobility\""
+param **.host*.mobility.initFromDisplayString false
+param *.host[*].mobility.speed uniform(10mps,20mps)
+param *.visualizer.osgVisualizer.typename "\"IntegratedOsgVisualizer\""
+param *.visualizer.osgVisualizer.sceneVisualizer.clearColor "\"skyblue\""
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneImage "\"showcases/desert\""
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneImageSize 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -200m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -200m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinZ 0m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxZ 100m
+param *.visualizer.osgVisualizer.networkNodeVisualizer.displayModuleName false
+param *.visualizer.*.mobilityVisualizer.displayMobility true
+param *.visualizer.*.mobilityVisualizer.displayPositions true
+param *.visualizer.*.mobilityVisualizer.displayOrientations true
+param *.visualizer.*.mobilityVisualizer.displayVelocities true
+param *.visualizer.*.mobilityVisualizer.displayMovementTrails true
+param *.visualizer.*.mobilityVisualizer.animationSpeed 1
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMinZ 0m
+param **.constraintAreaMaxX 100m
+param **.constraintAreaMaxY 100m
+param **.constraintAreaMaxZ 100m
+param *.host*.wlan[0].radio.displayCommunicationRange true
+param *.sensor*.wlan[0].radio.displayCommunicationRange true
+
+vector 0 mobilityDrones.host[0].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 1 mobilityDrones.sensor1.energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 2 mobilityDrones.host[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 mobilityDrones.host[0].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 4 mobilityDrones.sensor1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 mobilityDrones.sensor1.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 6 mobilityDrones.host[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 7 mobilityDrones.sensor1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 8 mobilityDrones.host[0].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 9 mobilityDrones.host[0].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 10 mobilityDrones.host[0].wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 11 mobilityDrones.host[0].wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 12 mobilityDrones.host[0].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 13 mobilityDrones.host[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 14 mobilityDrones.host[0].wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 15 mobilityDrones.host[0].wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 16 mobilityDrones.sensor1.energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 17 mobilityDrones.sensor1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 18 mobilityDrones.sensor1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 19 mobilityDrones.sensor1.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 20 mobilityDrones.sensor1.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 21 mobilityDrones.sensor1.wlan[0].mac packetDropNotAddressToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 22 mobilityDrones.sensor1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 23 mobilityDrones.sensor1.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 24 mobilityDrones.sensor1.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 25 mobilityDrones.host[0].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 26 mobilityDrones.host[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 27 mobilityDrones.host[0].app[1] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 28 mobilityDrones.host[0].app[1] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 29 mobilityDrones.host[0].app[1] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 30 mobilityDrones.host[0].app[1] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 31 mobilityDrones.host[0].wlan[0].mac packetDropRetryLimitReached:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, vector(packetBytes)"
+0	10942 962790 0 41730 0 790.863059901101 32768 0 0.075 279.7909049999 18.609700397029
+3	973732 962814 0 41730 0 790.863059901101 32768 0 0.075 279.7909099999 18.609700397054
+0	1936546 999872 41730 83489 790.863059901101 1582.84972174409 32768 0 0.075 279.7461999999 18.607225427004
+3	2936418 999871 41730 83489 790.863059901101 1582.84972174409 32768 0 0.075 279.8211949999 18.612850426979
+1	3936289 1029016 0 98724 0 1871.848201902552 32768 0 0.075 400.72962999992 20.341475907654
+5	4965305 1029036 0 98730 0 1871.850041902535 32768 0 0.075 400.72962999992 20.341475907654
+13	5994341 932511 21 105375 0.84663374409 1997.86200974409 32768 0 2 32768 49152
+0	6926852 846194 83489 117924 1582.84972174409 2235.84780174409 27037 0 0.075 230.91254499993 15.360100383728
+1	7773046 210010 98730 117919 1871.850041902535 2235.846921820616 6358 0 0.075 77.850485000002 3.9501750774249
+2	7983056 506491 0 117923 0 2235.84760974409 18334 0 3 45830 119158
+3	8489547 846162 83491 117924 1582.85141774409 2235.84780174409 27036 0 0.075 230.83754499993 15.354475383728
+4	9335709 14773 0 117657 0 2230.851635737257 519 0 3 1292 3358
+5	9350482 209981 98730 117919 1871.850041902535 2235.846921820616 6357 0 0.075 77.850485000002 3.9501750774249
+6	9560463 519731 0 117923 0 2235.84760974409 18797 0 3 10096 11474
+7	10080194 534742 0 117919 0 2235.846921820616 18796 0 3 36817 91637
+8	10614936 63863 15 117910 0.84426574409 2235.84426574409 2236 10 10 22360 223600
+9	10678799 63863 17 117911 0.84426574409 2235.84426574409 2236 18 18 40248 724464
+10	10742662 66099 19 117913 0.84426574409 2235.84426574409 2236 47 47 105092 4939324
+11	10808761 127726 19 117915 0.84426574409 2235.84503374409 4472 0 1 2236 2236
+12	10936487 1233725 21 117924 0.84663374409 2235.84780174409 27738 -1.1820958317434 -4.23316872045e-006 -16396.21773861 12922.672443682
+13	12170212 117080 105397 117924 1998.84567374409 2235.84780174409 3894 0 2 3895 5843
+14	12287292 66099 21 117915 0.84663374409 2235.84503374409 2236 47 47 105092 4939324
+15	12353391 79515 21 117915 0.84663374409 2235.84503374409 2236 0.000128 0.002368 2.802368 0.004675702784
+16	12432906 866482 23 117919 0.846825801499 2235.846921820616 19053 -0.8034223153854 -4.234129007495e-006 -7652.5452818705 4098.2589161122
+17	13299388 6845 24 117641 0.847251737257 2230.847251737257 224 10 10 2240 22400
+18	13306233 6845 26 117642 0.847251737257 2230.847251737257 224 18 18 4032 72576
+19	13313078 6845 28 117644 0.847251737257 2230.847251737257 224 47 47 10528 494816
+20	13319923 13242 28 117652 0.847251737257 2230.849747737257 448 0 1 224 224
+21	13333165 271194 33 117920 0.848521801499 2235.846921820616 8907 47 47 418629 19675563
+22	13604359 30524 36 117657 0.850067737257 2230.851635737257 1032 0 2 1032 1548
+23	13634883 6845 36 117652 0.850067737257 2230.849747737257 224 47 47 10528 494816
+24	13641728 8184 36 117652 0.850067737257 2230.849747737257 224 0.000128 0.02208 0.96128 0.008927076352
+25	13649912 6831 45 117661 0.851955794679 2230.851635833885 224 18 18 4032 72576
+26	13656743 6947 45 117661 0.851955794679 2230.851635833885 224 1 224 25200 3771600
+27	13663690 6831 46 117662 0.851955794679 2230.851635833885 224 10 10 2240 22400
+28	13670521 410217 46 117662 0.1 2230.8 22308 0 800 178400 142720000
+29	14080738 9493 46 117662 0.851955794679 2230.851635833885 224 0.002016069489 0.023968171776 1.590972448648 0.017211623814312
+30	14090231 6945 46 117662 0.851955794679 2230.851635833885 224 0 223 24976 3721424
+31	14097176 66229 79 117895 0.864707794679 2234.85648974409 2235 47 47 105045 4937115
+3	14163405 1041515 117926 159610 2235.84949774409 3026.85431374409 32768 0 0.075 279.7464949999 18.607225456979
+0	15204920 1041515 117926 159610 2235.84949774409 3026.85431374409 32768 0 0.075 279.7464949999 18.607225456979
+0	16246435 306976 159615 171916 3026.85596174409 3260.84458574409 9660 0 0.075 82.505440000005 5.4884501626997
+1	16553411 592930 117925 171893 2235.847801820704 3259.857209834097 17905 0 0.075 219.21947499998 11.122625307875
+2	17146341 244238 117926 171915 2235.84949774409 3260.84439374409 8402 2 3 21005 54613
+3	17390579 306976 159615 171916 3026.85596174409 3260.84458574409 9660 0 0.075 82.505440000005 5.4884501626997
+4	17697555 6900 118206 171435 2240.859795737257 3250.868851737257 230 2 3 575 1495
+5	17704455 592930 117925 171893 2235.847801820704 3259.857209834097 17905 0 0.075 219.21947499998 11.122625307875
+6	18297385 250636 117926 171915 2235.84949774409 3260.84439374409 8616 0 3 4629 5261
+7	18548021 257378 117925 171893 2235.847801820704 3259.857209834097 8609 0 3 16873 42007
+8	18805399 30750 117960 171910 2236.84426574409 3260.84426574409 1025 10 10 10250 102500
+9	18836149 30750 117961 171911 2236.84426574409 3260.84426574409 1025 18 18 18450 332100
+10	18866899 31775 117963 171913 2236.84426574409 3260.84426574409 1025 47 47 48175 2264225
+11	18898674 61500 117963 171915 2236.84426574409 3260.84439374409 2050 0 1 1025 1025
+12	18960174 568936 117926 171916 2235.84949774409 3260.84458574409 12715 -1.723949224305 -1.1822230317434 -18476.011835249 27158.387966721
+13	19529110 505280 117926 171916 2235.84949774409 3260.84458574409 16804 0 2 16804 25206
+14	20034390 31775 117965 171915 2236.84503374409 3260.84439374409 1025 47 47 48175 2264225
+15	20066165 37925 117965 171915 2236.84503374409 3260.84439374409 1025 0.000128 0.002368 1.28928 0.00217151488
+16	20104090 404296 117925 171893 2235.847801820704 3259.857209834097 8724 -1.1715328845686 -0.80342231978541 -8614.5431428603 8604.9384260884
+17	20508386 3264 118172 171394 2240.847251737257 3250.847251737257 102 10 10 1020 10200
+18	20511650 3264 118173 171395 2240.847251737257 3250.847251737257 102 18 18 1836 33048
+19	20514914 3264 118175 171397 2240.847251737257 3250.847251737257 102 47 47 4794 225318
+20	20518178 6324 118175 171431 2240.847251737257 3250.866963737257 204 0 1 102 102
+21	20524502 130318 117928 171894 2235.849497820704 3259.857209834097 4086 47 47 192042 9025974
+22	20654820 14260 118206 171435 2240.859795737257 3250.868851737257 460 0 2 460 690
+23	20669080 3264 118206 171431 2240.859795737257 3250.866963737257 102 47 47 4794 225318
+24	20672344 3874 118206 171431 2240.859795737257 3250.866963737257 102 0.000128 0.020992 0.36704 0.003437621248
+25	20676218 3254 118214 171439 2240.861683808617 3250.868851872393 102 18 18 1836 33048
+26	20679472 3356 118214 171439 2240.861683808617 3250.868851872393 102 225 326 28101 7830251
+27	20682828 3254 118215 171440 2240.861683808617 3250.868851872393 102 10 10 1020 10200
+28	20686082 202164 118215 171440 2230.9 3250.8 10200 0 800 81600 65280000
+29	20888246 4470 118215 171440 2240.861683808617 3250.868851872393 102 0.002016055999 0.022880172054 0.645661299338 0.0066850788584202
+30	20892716 3356 118215 171440 2240.861683808617 3250.868851872393 102 224 325 27999 7774151
+31	20896072 31849 117946 171895 2235.85712974409 3259.85776974409 1025 47 47 48175 2264225
+

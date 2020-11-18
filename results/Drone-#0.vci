@@ -1,15 +1,15 @@
-file 3910 1605699253                                            
+file 3911 1605705799                                            
 version 2
-run Drone-0-20201118-08:27:51-23028
+run Drone-0-20201118-10:23:04-9220
 attr configname Drone
-attr datetime 20201118-08:27:51
+attr datetime 20201118-10:23:04
 attr experiment Drone
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network mobilityDrones
-attr processid 23028
+attr processid 9220
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -26,12 +26,12 @@ param *.visualizer.osgVisualizer.typename "\"IntegratedOsgVisualizer\""
 param *.visualizer.osgVisualizer.sceneVisualizer.clearColor "\"skyblue\""
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneImage "\"showcases/desert\""
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneImageSize 500m
-param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 500m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -300m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -300m
+param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 1000m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -500m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -500m
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinZ 0m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 300m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 300m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 1000m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 1000m
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxZ 200m
 param *.visualizer.osgVisualizer.networkNodeVisualizer.displayModuleName false
 param *.visualizer.*.mobilityVisualizer.displayMobility true
@@ -80,12 +80,12 @@ vector 7 mobilityDrones.controller.wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-0	3654 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
-1	3704 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
-2	3754 27 0 0 0 0 3 0 2 2 4
-3	3781 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
-4	3822 27 0 0 0 0 3 0 2 2 4
-5	3849 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
-6	3890 9 0 0 0 0 1 1 1 1 1
-7	3899 9 0 0 0 0 1 1 1 1 1
+0	3655 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
+1	3705 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
+2	3755 27 0 0 0 0 3 0 2 2 4
+3	3782 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
+4	3823 27 0 0 0 0 3 0 2 2 4
+5	3850 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
+6	3891 9 0 0 0 0 1 1 1 1 1
+7	3900 9 0 0 0 0 1 1 1 1 1
 

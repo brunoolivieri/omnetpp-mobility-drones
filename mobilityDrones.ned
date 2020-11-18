@@ -26,18 +26,13 @@ network mobilityDrones
         visualizer: IntegratedMultiVisualizer { // original IntegratedVisualizer
             @display("p=-100,-50");
         }
-        host[numHosts]: StandardHost {  // original StandardHost
+        host[numHosts]: SensorNode {  // original StandardHost
             @display("i=misc/node_vs");
         }
-        
-        // comes from Ieee802.15.4
         sensor1: SensorNode {
-            @display("p=200,200;i=misc/sensor");
+            @display("p=50,50;i=misc/sensor");
         }
-        controller: SensorNode {
-            @display("p=0,0;i=misc/sensorgateway");
-        }
-        configurator: Ipv4NetworkConfigurator {
+      configurator: Ipv4NetworkConfigurator {
             @display("p=0,200");
         }
         radioMedium: Ieee802154NarrowbandScalarRadioMedium {
