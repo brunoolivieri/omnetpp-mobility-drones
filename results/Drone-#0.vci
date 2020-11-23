@@ -1,38 +1,36 @@
-file 3911 1605705799                                            
+file 3915 1606151272                                            
 version 2
-run Drone-0-20201118-10:23:04-9220
+run Drone-0-20201123-14:07:34-14992
 attr configname Drone
-attr datetime 20201118-10:23:04
+attr datetime 20201123-14:07:34
 attr experiment Drone
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network mobilityDrones
-attr processid 9220
+attr processid 14992
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-param *.numHosts 3
+param *.numHosts 1
 param *.host[*].osgModel "\"3d/drone.ive.100.scale.0,0,90.rot\""
 param *.host[*].mobility.typename "\"RandomWaypointMobility\""
 param **.host*.mobility.initFromDisplayString false
-param **.updateInterval 0.1s
 param *.host[*].mobility.speed uniform(10mps,20mps)
-param **.constraintAreaMinZ 0m
 param *.visualizer.osgVisualizer.typename "\"IntegratedOsgVisualizer\""
 param *.visualizer.osgVisualizer.sceneVisualizer.clearColor "\"skyblue\""
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneImage "\"showcases/desert\""
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneImageSize 500m
-param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 1000m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -500m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -500m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneImageSize 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.axisLength 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinX -200m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinY -200m
 param *.visualizer.osgVisualizer.sceneVisualizer.sceneMinZ 0m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 1000m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 1000m
-param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxZ 200m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxX 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxY 100m
+param *.visualizer.osgVisualizer.sceneVisualizer.sceneMaxZ 100m
 param *.visualizer.osgVisualizer.networkNodeVisualizer.displayModuleName false
 param *.visualizer.*.mobilityVisualizer.displayMobility true
 param *.visualizer.*.mobilityVisualizer.displayPositions true
@@ -43,49 +41,50 @@ param *.visualizer.*.mobilityVisualizer.animationSpeed 1
 param **.constraintAreaMinX 0m
 param **.constraintAreaMinY 0m
 param **.constraintAreaMinZ 0m
-param **.constraintAreaMaxX 500m
-param **.constraintAreaMaxY 500m
+param **.constraintAreaMaxX 100m
+param **.constraintAreaMaxY 100m
 param **.constraintAreaMaxZ 100m
-param **.networkConfiguratorModule "\"\""
+param *.host*.wlan[0].radio.displayCommunicationRange true
+param *.sensor*.wlan[0].radio.displayCommunicationRange true
 
-vector 0 mobilityDrones.sensor1.energyStorage powerConsumption:vector ETV
+vector 0 mobilityDrones.host[0].energyStorage powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
-vector 1 mobilityDrones.controller.energyStorage powerConsumption:vector ETV
+vector 1 mobilityDrones.sensor1.energyStorage powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
-vector 2 mobilityDrones.sensor1.wlan[0].radio radioMode:vector ETV
+vector 2 mobilityDrones.host[0].wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 3 mobilityDrones.sensor1.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+vector 3 mobilityDrones.host[0].wlan[0].radio.energyConsumer powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
-vector 4 mobilityDrones.controller.wlan[0].radio radioMode:vector ETV
+vector 4 mobilityDrones.sensor1.wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
-vector 5 mobilityDrones.controller.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+vector 5 mobilityDrones.sensor1.wlan[0].radio.energyConsumer powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
-vector 6 mobilityDrones.sensor1.wlan[0].radio receptionState:vector ETV
+vector 6 mobilityDrones.host[0].wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-vector 7 mobilityDrones.controller.wlan[0].radio receptionState:vector ETV
+vector 7 mobilityDrones.sensor1.wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
-0	3655 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
-1	3705 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
-2	3755 27 0 0 0 0 3 0 2 2 4
-3	3782 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
-4	3823 27 0 0 0 0 3 0 2 2 4
-5	3850 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
-6	3891 9 0 0 0 0 1 1 1 1 1
-7	3900 9 0 0 0 0 1 1 1 1 1
+0	3659 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
+1	3709 50 0 0 0 0 5 0 5e-006 5e-006 2.5e-011
+2	3759 27 0 0 0 0 3 0 2 2 4
+3	3786 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
+4	3827 27 0 0 0 0 3 0 2 2 4
+5	3854 41 0 0 0 0 4 0 5e-006 5e-006 2.5e-011
+6	3895 9 0 0 0 0 1 1 1 1 1
+7	3904 9 0 0 0 0 1 1 1 1 1
 

@@ -1,0 +1,6 @@
+# Common files except under Common
+# batch simulation results
+/results/*
+*.out
+*.sca
+*.elog
