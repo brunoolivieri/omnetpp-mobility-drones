@@ -1,6 +1,0 @@
-<config>
-	<interface hosts="host[*]" address="10.0.0.1" netmask="255.255.x.x"/>
-	<interface hosts="**" address="10.0.x.x" netmask="255.255.x.x"/>
-	<route hosts="host[*]" interface="wlan0" destination="*" gateway="*"/>
-	<route hosts="host* sensor*" destination="*" gateway="10.0.0.1"/>
-</config>
