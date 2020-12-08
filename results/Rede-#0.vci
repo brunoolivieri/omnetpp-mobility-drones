@@ -1,4 +1,4 @@
-file 9911 1606239952                                            
+file 9911 1606339130                                            
 version 2
 run Rede-0-20201124-14:45:42-24176
 attr configname Rede
@@ -98,103 +98,102 @@ vector 0 mobilityDrones.host[0].energyStorage powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
+0	8814 168 0 22 0 0.84682574409 10 0 0.075 0.080005 0.005650000025
 vector 1 mobilityDrones.sensor1.energyStorage powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
+1	8982 99 0 23 0 0.846825801499 7 0 0.05 0.050005 0.002500000025
 vector 2 mobilityDrones.host[0].wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
+2	9081 49 0 21 0 0.84663374409 4 0 3 5 13
 vector 3 mobilityDrones.host[0].wlan[0].radio.energyConsumer powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
+3	9130 159 0 22 0 0.84682574409 9 0 0.075 0.080005 0.005650000025
 vector 4 mobilityDrones.sensor1.wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
 attr source radioModeChanged
 attr title "Radio mode, vector"
+4	9289 27 0 0 0 0 3 0 2 2 4
 vector 5 mobilityDrones.sensor1.wlan[0].radio.energyConsumer powerConsumption:vector ETV
 attr interpolationmode sample-hold
 attr source powerConsumptionChanged
 attr title "Power consumption, vector"
+5	9316 90 0 23 0 0.846825801499 6 0 0.05 0.050005 0.002500000025
 vector 6 mobilityDrones.host[0].wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
+6	9406 31 0 21 0 0.84663374409 2 0 1 1 1
 vector 7 mobilityDrones.sensor1.wlan[0].radio receptionState:vector ETV
 attr interpolationmode sample-hold
 attr source receptionStateChanged
 attr title "Radio reception state, vector"
+7	9437 32 0 23 0 0.846825801499 2 1 3 4 10
 vector 8 mobilityDrones.host[0].app[0] packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
+8	9469 23 15 15 0.84426574409 0.84426574409 1 10 10 10 100
 vector 9 mobilityDrones.host[0].udp packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
+9	9492 23 17 17 0.84426574409 0.84426574409 1 18 18 18 324
 vector 10 mobilityDrones.host[0].wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet pushed, vector(packetBytes)"
+10	9515 24 19 19 0.84426574409 0.84426574409 1 47 47 47 2209
 vector 11 mobilityDrones.host[0].wlan[0].mac.queue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
 attr title "queue length, vector"
+11	9539 46 19 21 0.84426574409 0.84663374409 2 0 1 1 1
 vector 12 mobilityDrones.host[0].energyStorage residualEnergyCapacity:vector ETV
 attr interpolationmode linear
 attr source residualEnergyCapacityChanged
 attr title "Residual energy capacity, vector"
+12	9585 82 21 22 0.84663374409 0.84682574409 2 -5.19316872045e-006 -4.23316872045e-006 -9.4263374409e-006 4.4888718774857e-011
 vector 13 mobilityDrones.host[0].wlan[0].radio transmissionState:vector ETV
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, vector"
+13	9667 46 21 22 0.84663374409 0.84682574409 2 1 2 3 5
 vector 14 mobilityDrones.host[0].wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet popped, vector(packetBytes)"
+14	9713 24 21 21 0.84663374409 0.84663374409 1 47 47 47 2209
 vector 15 mobilityDrones.host[0].wlan[0].mac.queue queueingTime:vector ETV
 attr interpolationmode none
 attr source queueingTime(packetPopped)
 attr title "queueing times, vector"
 attr unit s
+15	9737 30 21 21 0.84663374409 0.84663374409 1 0.002368 0.002368 0.002368 5.607424e-006
 vector 16 mobilityDrones.sensor1.energyStorage residualEnergyCapacity:vector ETV
 attr interpolationmode linear
 attr source residualEnergyCapacityChanged
 attr title "Residual energy capacity, vector"
+16	9767 43 23 23 0.846825801499 0.846825801499 1 -4.234129007495e-006 -4.234129007495e-006 -4.234129007495e-006 1.7927848452111e-011
 vector 17 mobilityDrones.sensor1.app[0] packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
+17	9810 25 24 24 0.847251737257 0.847251737257 1 10 10 10 100
 vector 18 mobilityDrones.sensor1.udp packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
+18	9835 25 26 26 0.847251737257 0.847251737257 1 18 18 18 324
 vector 19 mobilityDrones.sensor1.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet pushed, vector(packetBytes)"
+19	9860 25 28 28 0.847251737257 0.847251737257 1 47 47 47 2209
 vector 20 mobilityDrones.sensor1.wlan[0].mac.queue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
 attr title "queue length, vector"
-0	8814 168 0 22 0 0.84682574409 10 0 0.075 0.080005 0.005650000025
-1	8982 99 0 23 0 0.846825801499 7 0 0.05 0.050005 0.002500000025
-2	9081 49 0 21 0 0.84663374409 4 0 3 5 13
-3	9130 159 0 22 0 0.84682574409 9 0 0.075 0.080005 0.005650000025
-4	9289 27 0 0 0 0 3 0 2 2 4
-5	9316 90 0 23 0 0.846825801499 6 0 0.05 0.050005 0.002500000025
-6	9406 31 0 21 0 0.84663374409 2 0 1 1 1
-7	9437 32 0 23 0 0.846825801499 2 1 3 4 10
-8	9469 23 15 15 0.84426574409 0.84426574409 1 10 10 10 100
-9	9492 23 17 17 0.84426574409 0.84426574409 1 18 18 18 324
-10	9515 24 19 19 0.84426574409 0.84426574409 1 47 47 47 2209
-11	9539 46 19 21 0.84426574409 0.84663374409 2 0 1 1 1
-12	9585 82 21 22 0.84663374409 0.84682574409 2 -5.19316872045e-006 -4.23316872045e-006 -9.4263374409e-006 4.4888718774857e-011
-13	9667 46 21 22 0.84663374409 0.84682574409 2 1 2 3 5
-14	9713 24 21 21 0.84663374409 0.84663374409 1 47 47 47 2209
-15	9737 30 21 21 0.84663374409 0.84663374409 1 0.002368 0.002368 0.002368 5.607424e-006
-16	9767 43 23 23 0.846825801499 0.846825801499 1 -4.234129007495e-006 -4.234129007495e-006 -4.234129007495e-006 1.7927848452111e-011
-17	9810 25 24 24 0.847251737257 0.847251737257 1 10 10 10 100
-18	9835 25 26 26 0.847251737257 0.847251737257 1 18 18 18 324
-19	9860 25 28 28 0.847251737257 0.847251737257 1 47 47 47 2209
-20	9885 24 28 28 0.847251737257 0.847251737257 1 1 1 1 1
-
+20	9885 26 28 28 0.847251737257 0.847251737257 1 1 1 1 1

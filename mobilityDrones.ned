@@ -57,7 +57,7 @@ network mobilityDrones
             parameters:
                 @display("p=100,150");
         }   
-        drones[numUAVs]: AdhocHost {  // original StandardHost
+        drones[numUAVs]: MobileNode {//MobileNode { // Last Commit AdhocHost {  // original StandardHost
             //@display("i=misc/node_vs");
         }   
         

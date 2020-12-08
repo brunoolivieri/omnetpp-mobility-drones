@@ -1,0 +1,13 @@
+
+
+TO-DO:
+
+
+
+Notes:
+
+1) Problem to create a class/ned "cModule not found, please register_class()" and stuff like that.
+
+Solution: https://stackoverflow.com/questions/39683567/omnet-class-not-found-when-called-as-a-submodule-of-a-compound-module
+
+(need to rebuild INET as a shared lib including the git project folder)
