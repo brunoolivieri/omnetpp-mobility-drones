@@ -30,8 +30,6 @@ import inet.visualizer.integrated.IntegratedMultiVisualizer;
 import inet.visualizer.integrated.IntegratedVisualizer;
 
 
-
-
 network mobilityDrones
 {
     parameters:
@@ -43,6 +41,10 @@ network mobilityDrones
 //        int numUAVs = default(0);  // the number of UAVs in the field
 //        int numCSs = default(0);  // the number of charging stations in the field
 		int numUAVs = default(3);
+		//coordinateSystemModule = "OsgGeographicCoordinateSystem";
+        double initialLatitude @unit(deg) = default(nan deg);
+        double initialLongitude @unit(deg) = default(nan deg);
+        double initialAltitude @unit(m) = default(0m);  
 
     types:
 //        channel Channel extends ned.DelayChannel {
@@ -57,16 +59,14 @@ network mobilityDrones
             parameters:
                 @display("p=100,150");
         }   
-        drones[numUAVs]: MobileNode {//MobileNode { // Last Commit AdhocHost {  // original StandardHost
-            //@display("i=misc/node_vs");
-        }   
-        
         configurator: Ipv4NetworkConfigurator {
             @display("p=0,200");
         }
         radioMedium: Ieee802154NarrowbandScalarRadioMedium {
             @display("p=200,0");
         }
-          
+        drones[numUAVs]: MobileNode {//MobileNode { // Last Commit AdhocHost {  // original StandardHost
+            //@display("i=misc/node_vs");
+        }             
 
 }

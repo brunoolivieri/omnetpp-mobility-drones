@@ -1,46 +1,43 @@
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
-
-//  NAOOOOO
-// A mobile node showing a 3D model. Able to display
-// its position, trail, transmission range
-// NAOOOOO
-
 package inet.showcases.mobilityDrones;
 
 import inet.node.inet.AdhocHost;
+import inet.mobility.base.MovingMobilityBase;
+import inet.common.geometry.common.OsgGeographicCoordinateSystem;
+import inet.environment.common.PhysicalEnvironment;
+import inet.mobility.contract.IMobility;
 
 
 module MobileNode extends AdhocHost
 {
     parameters:
         @class(MobileNode);
-        int par1 = default(1);
-    	double par2 = default(2);
-        
-       
-        //@display("i=block/broadcast");
 
-//        // decorations and annotations
-//        int trailLength = default(0);                         // the length of the trail in time steps showing the past movement of the node. 0 disables the trail        
-//        string trailColor = default("#000000ff");             // the color of the trail indicator in hex RRGGBBAA format
-//        int commandPreviewCommandCount = default(3);          // the length of the waypoint movement in time steps showing the planned movement of the node. 0 shows all
-//        bool commandPreviewEnabled = default(true);           // decides whether or not to display command preview
-//        string commandPreviewMissionColor = default("#00000055"); // the color of the command preview in hex RRGGBBAA format
-//        string commandPreviewMaintenanceColor = default("#FFFFFF88"); // the color of the command preview in hex RRGGBBAA format
-//
-//        //energy consumption
-//        int batteryCapacity @unit("mAh") = default(2200mAh);  // the battery capacity (in mAh, "0" for infinite energy storage)
-//        int batteryRemaining @unit("mAh") = default(2200mAh); // the battery capacity remaining on simulation start (in mAh, must be equal or less than batteryCapacity)
+  		int mobNodeId = -1;
+  		
+  		int wayPointSetSize = 4;
+  		int wayPointIndex = 0;  
+  		bool needUpdateTargetXYZ = false;
+  		
+  		double nextX_0 = 0.0;
+  		double nextY_0 = 0.0;
+  		double nextZ_0 = 0.0;
+
+  		double nextX_1 = 0.0;
+  		double nextY_1 = 0.0;
+  		double nextZ_1 = 0.0;
+  		
+  		double nextX_2 = 0.0;
+  		double nextY_2 = 0.0;
+  		double nextZ_2 = 0.0;
+  		
+  		double nextX_3 = 0.0;
+  		double nextY_3 = 0.0;
+  		double nextZ_3 = 0.0;  		
+  		
+  		//double waypointsAxisX[4];
+  		//Coord teste;
+  		
+    types:
+        //struct product {  int weight; double price; } 
+        //foo double;
 }
