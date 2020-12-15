@@ -13,4 +13,27 @@ Solution: https://stackoverflow.com/questions/39683567/omnet-class-not-found-whe
 (need to rebuild INET as a shared lib including the git project folder)
 
 
-2) Folder "cpp_files" NEED to be linked as a folder in inet folders in order to compile!!!
+2) Folder "cpp_files" NEED to be linked as a folder in inet folders in order to compile!!! 
+
+3) Files like "GotoWaypointMobility.to-link-to-ned" need to have a "GotoWaypointMobility.ned" linked in a INET root folder.
+
+
+
+100) Goodies:
+
+        // Simulations is the three in left panel on the "run" screen
+        auto simulation = getSimulation();  <<--- pegando a simulação toda
+        // you can get some id:
+        // auto teste = simulation->getModule(4)->getId();
+        // get some parameters as well
+        // auto teste = simulation->getModule(6)->par("mobNodeId").intValue();  <-- pegando pelo ID
+		
+		// How to get .NED parameters:
+        //std::cout  << "numOfWaypoint do ned= " << getParentModule()->par("numOfWaypoint").intValue() << endl;
+
+		// dealing with a mobile node from a mobility model.
+		auto nextWayPonint = myParentNode->par("wayPointIndex").intValue(); 
+        myParentNode->par("wayPointIndex").setIntValue(nextWP);
+
+
+		

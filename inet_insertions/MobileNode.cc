@@ -24,21 +24,21 @@ void MobileNode::initialize(){
         waypoints[n].z = 100 + internalMobNodeId;
     }
 
-    par("nextX_0").setDoubleValue(0 * 100 + internalMobNodeId);
-    par("nextY_0").setDoubleValue(0 * 100 + internalMobNodeId);
-    par("nextZ_0").setDoubleValue(100 + internalMobNodeId);
+    par("nextX_0").setDoubleValue(0);// * 100 + internalMobNodeId);
+    par("nextY_0").setDoubleValue(0);// * 100 + internalMobNodeId);
+    par("nextZ_0").setDoubleValue(10);
 
     par("nextX_1").setDoubleValue(0 * 100 + internalMobNodeId);
     par("nextY_1").setDoubleValue(2 * 100 + internalMobNodeId);
-    par("nextZ_1").setDoubleValue(100 + internalMobNodeId);
+    par("nextZ_1").setDoubleValue(10);
 
     par("nextX_2").setDoubleValue(2 * 100 + internalMobNodeId);
     par("nextY_2").setDoubleValue(2 * 100 + internalMobNodeId);
-    par("nextZ_2").setDoubleValue(100 + internalMobNodeId);
+    par("nextZ_2").setDoubleValue(10);
 
     par("nextX_3").setDoubleValue(2 * 100 + internalMobNodeId);
     par("nextY_3").setDoubleValue(0 * 100 + internalMobNodeId);
-    par("nextZ_3").setDoubleValue(100 + internalMobNodeId);
+    par("nextZ_3").setDoubleValue(10);
 
 
 
