@@ -17,6 +17,8 @@ import inet.visualizer.integrated.IntegratedMultiVisualizer;
 import inet.visualizer.integrated.IntegratedVisualizer;
 
 
+
+
 network mobilityDrones
 {
     parameters:
@@ -42,6 +44,7 @@ network mobilityDrones
         }
         drones[numUAVs]: MobileNode {
 
-        }             
+        } 
+                  
 
 }

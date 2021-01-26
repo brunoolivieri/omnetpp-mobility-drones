@@ -8,36 +8,39 @@ import inet.mobility.contract.IMobility;
 
 
 module MobileNode extends AdhocHost
-{
+{    
     parameters:
         @class(MobileNode);
 
-  		int mobNodeId = -1;
+  		int internalMobNodeId = -1;
+  		int simulationIndexOfFirstNode = 6;
   		
   		int wayPointSetSize = 4;
   		int wayPointIndex = 0;  
   		bool needUpdateTargetXYZ = false;
+  		double nextX = 0.0;
+  		double nextY = 0.0;
+  		double nextZ = 0.0;
   		
+  		
+  		// TO-DO: remove!!!
   		double nextX_0 = 0.0;
   		double nextY_0 = 0.0;
   		double nextZ_0 = 0.0;
-
   		double nextX_1 = 0.0;
   		double nextY_1 = 0.0;
   		double nextZ_1 = 0.0;
-  		
   		double nextX_2 = 0.0;
   		double nextY_2 = 0.0;
   		double nextZ_2 = 0.0;
-  		
   		double nextX_3 = 0.0;
   		double nextY_3 = 0.0;
   		double nextZ_3 = 0.0;  		
-  		
   		//double waypointsAxisX[4];
   		//Coord teste;
-  		
-    types:
+
+     types:
         //struct product {  int weight; double price; } 
         //foo double;
+
 }

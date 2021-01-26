@@ -11,27 +11,45 @@ GotoWaypointMobility::GotoWaypointMobility()
 {
     nextMoveIsWait = false;
 
-    //std::cout  << "GotoWaypointMobility() " << endl;
+    //std::cout  << " Finished Constructor GotoWaypointMobility() " << endl;
 
+}
 
+void GotoWaypointMobility::setInitialPosition()
+{
+    // not all mobility models have "initialX", "initialY" and "initialZ" parameters
+    lastPosition.x = par("initialXgoTo");
+    lastPosition.y = par("initialYgoTo");
+    lastPosition.z = par("initialZgoTo");
+
+    EV_DEBUG << "position initialized from initialX/Y/Z parameters: " << lastPosition << endl;
+
+    if (par("updateDisplayString"))
+        updateDisplayStringFromMobilityState();
+
+    // std::cout  << "XGH_debug: lastPosition: " << lastPosition << endl;
 }
 
 void GotoWaypointMobility::setTargetPosition()
 {
-
     if (nextMoveIsWait) {
         simtime_t waitTime = waitTimeParameter->doubleValue();
         nextChange = simTime() + waitTime;
         nextMoveIsWait = false;
     }
     else {
-
-        /////////////////// Olivieri ///////////////////
-        std::cout  << "getParentModule: "  <<  this->getParentModule() << endl;
+        //std::cout  << "getParentModule: "  <<  this->getParentModule() << endl;
         auto myParentNode = this->getParentModule();
 
         auto nextWayPonint = myParentNode->par("wayPointIndex").intValue();
-        std::cout  << "Setando o wayPointIndex " << nextWayPonint << endl;
+
+        ////////////
+//        int myParentNodeId = myParentNode->getId();
+//        auto simulation = getSimulation();
+//        auto teste = simulation->getModule(myParentNodeId)->refreshNextWayPoint();
+//        std::cout  << "simulation->getModule(myParentNodeId)->getId();: "  <<  teste << endl;
+
+        ///////////
 
         std::string tmp = std::to_string(nextWayPonint);
         std::string axisX = "nextX_" + tmp;
@@ -47,21 +65,20 @@ void GotoWaypointMobility::setTargetPosition()
         playTargetPosition.setY(nextY);
         playTargetPosition.setZ(nextZ);
 
+        //std::cout  << "Seting o wayPointIndex " << nextWayPonint << endl;
         int nextWP = ++nextWayPonint % 4;
         myParentNode->par("wayPointIndex").setIntValue(nextWP);
 
-        std::cout << "playTargetPosition = " << playTargetPosition.getXyz() << endl;
+        //std::cout << "playTargetPosition TEXTO DA REUNIAO = " << playTargetPosition.getXyz() << endl;
 
         targetPosition = playTargetPosition;
-        /////////////////// Olivieri ///////////////////
-
         //targetPosition = getRandomPosition();
+
         double speed = speedParameter->doubleValue();
         double distance = lastPosition.distance(targetPosition);
         simtime_t travelTime = distance / speed;
         nextChange = simTime() + travelTime;
         nextMoveIsWait = hasWaitTime;
-
     }
 }
 
