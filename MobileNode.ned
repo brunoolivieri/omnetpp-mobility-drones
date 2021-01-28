@@ -14,6 +14,7 @@ module MobileNode extends AdhocHost
 
   		int internalMobNodeId = -1;
   		int simulationIndexOfFirstNode = 6;
+  		int nodeType = 171;
   		
   		int wayPointSetSize = 4;
   		int wayPointIndex = 0;  

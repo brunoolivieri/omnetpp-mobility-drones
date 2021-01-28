@@ -5,6 +5,7 @@ import inet.environment.common.PhysicalEnvironment;
 import inet.node.inet.AdhocHost;
 import inet.visualizer.integrated.IntegratedVisualizer;
 import inet.mobility.contract.IMobility;
+import inet.mobility.static.StationaryMobility;
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.Eth100M;
 import inet.node.inet.SensorNode;
@@ -23,7 +24,7 @@ network mobilityDrones
 {
     parameters:
 
-		int numUAVs = default(3);
+		int numUAVs = default(1);
 
     types:
 
@@ -45,6 +46,12 @@ network mobilityDrones
         drones[numUAVs]: MobileNode {
 
         } 
-                  
+        
+        sensor1: MobileSensorNode {
+            @display("i=misc/sensor");
+        }
+//        sensor2: MobileSensorNode {
+//            @display("p=500,500;i=misc/sensor");
+//        }                  
 
 }

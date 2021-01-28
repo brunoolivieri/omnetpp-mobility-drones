@@ -1,5 +1,5 @@
-#ifndef __MOBILENODE_H_
-#define __MOBILENODE_H_
+#ifndef __MOBILESENSORNODE_H_
+#define __MOBILESENSORNODE_H_
 
 #include <omnetpp.h>
 //#include <cModule.h>
@@ -32,17 +32,19 @@ class WayPoint {
 
 //enum mobileNodeType { sensor = 1, uav = 2, baseStation = 3, missing = 171 };
 
-class MobileNode : public cModule  {
+class MobileSensorNode : public cModule  {
   protected:
     virtual void initialize() override;//(int stage) override;
     virtual void handleMessage(cMessage *msg);
   public:
-    int refreshNextWayPoint();
     int processMessage(inet::Packet *msg);
     string generateNextPacketToSend();
-    WayPoint waypoints[4];
-    int internalMobNodeId = -1;
+  //  WayPoint waypoints[4];
+    int internalMobNodeId;
     long sentMsgs = -1;
+    bool shouldSendAMsg = false;
+
+
   //  mobileNodeType myType = missing;
 
 };
