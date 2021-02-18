@@ -14,12 +14,12 @@ void MobileNode::initialize(){
 
 
     // TO-DO: these ID shaw be UUID as in network
-    internalMobNodeId = this->getId() ;//-  par("simulationIndexOfFirstNode").intValue() + 1;
+    internalMobNodeId = this->getId() -  par("simulationIndexOfFirstNode").intValue() + 1;
     par("internalMobNodeId").setIntValue(internalMobNodeId);
 
     //this->myType = static_cast<mobileNodeType>(par("nodeType").intValue());
 
-    std::cout << "UAV initialization of internalMobNodeId " << internalMobNodeId << " Class " << this->getClassName() << "." << endl;
+    std::cout << "UAV initialization of internalMobNodeId: " << internalMobNodeId << " Class " << this->getClassName() << "." << endl;
 
 
     for (int n= 0; n< par("wayPointSetSize").intValue(); n++){
